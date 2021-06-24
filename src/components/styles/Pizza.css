@@ -1,0 +1,7 @@
+.addButtons>*{
+    display: flex;
+    flex-direction: row;
+}
+.addButtons>*>*{
+    margin-right: 1rem;
+}

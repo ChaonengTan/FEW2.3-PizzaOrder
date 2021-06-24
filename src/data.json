@@ -1,0 +1,5 @@
+{
+    "toppings": ["Pepperoni", "Pineapple", "Peppers", "Onions"],
+    "crust": ["Xtra Large", "large", "Medium", "Small"],
+    "cheese": ["Mozzarella", "Cheddar", "Monterey Jack"]
+}

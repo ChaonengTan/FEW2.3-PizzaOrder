@@ -2,36 +2,36 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addPizza } from '../actions'
 
-import data from '../data.json'
 import './styles/Pizza.css'
 
-function Pizza() {
+function Pizza(props) {
+    const {data} = props
     const dispatch = useDispatch()
 
     const [name, setName] = useState('')
-    const {toppings, addTopping} = useState([])
-    const {crust, addCrust} = useState('')
-    const {cheese, addCheese} = useState('')
+    const [toppings, addTopping] = useState([])
+    const [crust, addCrust] = useState('')
+    const [cheese, addCheese] = useState('')
 
-    function variComponent(data, name) {
+    function variComponent(data, func) {
         return data.map((elem) => {
             return (
                 <div className='pizzaCard'>
                     <h3>{elem}</h3>
-                    <button onClick={e => {
-                        name.push({elem})
+                    <button onClick={(e) => {
+                        func([...toppings, elem])
                     }}>Add</button>
                 </div>
             )
         })
     }
-    function Component(data, name) {
+    function Component(data, func) {
         return data.map((elem) => {
             return (
                 <div className='pizzaCard'>
                     <h3>{elem}</h3>
-                    <button onClick={e => {
-                        name({elem})
+                    <button onClick={(e) => {
+                        func({elem})
                     }}>Add</button>
                 </div>
             )
@@ -53,6 +53,8 @@ function Pizza() {
             }}>
                 Save Pizza
             </button>
+
+            <div>{name} {toppings}</div>
         </div>
     )
 }

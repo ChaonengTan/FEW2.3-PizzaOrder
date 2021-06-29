@@ -13,7 +13,7 @@ function Pizza(props) {
     const [crust, addCrust] = useState('')
     const [cheese, addCheese] = useState('')
 
-    function variComponent(data, func) {
+    function multiComponent(data, func) {
         return data.map((elem) => {
             return (
                 <div className='pizzaCard'>
@@ -25,14 +25,19 @@ function Pizza(props) {
             )
         })
     }
-    function Component(data, func) {
+    function radioComponent(data, func) {
         return data.map((elem) => {
             return (
                 <div className='pizzaCard'>
                     <h3>{elem}</h3>
-                    <button onClick={(e) => {
-                        func({elem})
-                    }}>Add</button>
+                    <label>
+                        <input type='radio' name={String(func)} value={elem} onChange={(e) => {
+                            func(elem)
+                            console.log(cheese)
+                        }}/>
+                        <span>Select</span>
+                    </label>
+                    
                 </div>
             )
         })
@@ -40,9 +45,9 @@ function Pizza(props) {
     return (
         <div className='ToppingHandler'>
             <div className='addButtons'>
-                <div>{Component(data.crust, addCrust)}</div>
-                <div>{Component(data.cheese, addCheese)}</div>
-                <div>{variComponent(data.toppings, addTopping)}</div>
+                <div>{radioComponent(data.crust, addCrust)}</div>
+                <div>{radioComponent(data.cheese, addCheese)}</div>
+                <div>{multiComponent(data.toppings, addTopping)}</div>
             </div>
             <input
                 onChange={(e) => setName(e.target.value)}
@@ -54,7 +59,7 @@ function Pizza(props) {
                 Save Pizza
             </button>
 
-            <div>{name} {toppings}</div>
+            <div>{name}: {crust} {cheese} {toppings}</div>
         </div>
     )
 }

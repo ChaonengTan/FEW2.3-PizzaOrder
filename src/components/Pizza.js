@@ -17,10 +17,12 @@ function Pizza(props) {
         return data.map((elem) => {
             return (
                 <div className='pizzaCard'>
-                    <h3>{elem}</h3>
-                    <button onClick={(e) => {
-                        func([...toppings, elem])
-                    }}>Add</button>
+                    <label>
+                        <h3>{elem}</h3>
+                        <input type='checkbox' name={elem} onClick={(e) => {
+                            func([...toppings, elem])
+                        }}/>
+                    </label>
                 </div>
             )
         })
@@ -29,13 +31,15 @@ function Pizza(props) {
         return data.map((elem) => {
             return (
                 <div className='pizzaCard'>
-                    <h3>{elem}</h3>
                     <label>
-                        <input type='radio' name={String(func)} value={elem} onChange={(e) => {
-                            func(elem)
-                            console.log(cheese)
-                        }}/>
-                        <span>Select</span>
+                        <h3>{elem}</h3>
+                        <div>
+                            <input type='radio' name={String(func)} value={elem} onChange={(e) => {
+                                func(elem)
+                                console.log(cheese)
+                            }}/>
+                            <span>Select</span>
+                        </div>
                     </label>
                 </div>
             )

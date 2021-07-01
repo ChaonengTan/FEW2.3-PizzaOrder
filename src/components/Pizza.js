@@ -6,12 +6,12 @@ import './styles/Pizza.css'
 
 function Pizza(props) {
     const {data} = props
-    const dispatch = useDispatch()
 
+    const dispatch = useDispatch()
     const [name, setName] = useState('')
-    const [toppings, addTopping] = useState([])
     const [crust, addCrust] = useState('')
     const [cheese, addCheese] = useState('')
+    const [toppings, addTopping] = useState([])
 
     function multiComponent(data, func) {
         return data.map((elem) => {
@@ -37,7 +37,6 @@ function Pizza(props) {
                         }}/>
                         <span>Select</span>
                     </label>
-                    
                 </div>
             )
         })
@@ -51,15 +50,14 @@ function Pizza(props) {
             </div>
             <input
                 onChange={(e) => setName(e.target.value)}
-                value={name}
+                value={name} placeholder='Name Your Pizza'
             />
             <button onClick={(e) => {
-                dispatch(addPizza(name, {crust, cheese, toppings}))
+                dispatch(addPizza(name, [crust, cheese, toppings]))
             }}>
                 Save Pizza
             </button>
-
-            <div>{name}: {crust} {cheese} {toppings}</div>
+            <div>{name} {crust} {cheese} {toppings}</div>
         </div>
     )
 }

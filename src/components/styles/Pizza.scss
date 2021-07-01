@@ -1,0 +1,14 @@
+.addButtons>* {
+    display: flex;
+    flex-direction: row;
+    .pizzaCard {
+        margin: 1rem;
+        padding: 1rem;
+        border: solid black 2px;
+        height: 110px;
+        width: 110px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

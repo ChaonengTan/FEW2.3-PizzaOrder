@@ -1,7 +1,16 @@
-.addButtons>*{
-    display: flex;
-    flex-direction: row;
+.addButtons > * {
+  display: flex;
+  flex-direction: row;
 }
-.addButtons>*>*{
-    margin-right: 1rem;
+.addButtons > * .pizzaCard {
+  margin: 1rem;
+  padding: 1rem;
+  border: solid black 2px;
+  height: 110px;
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+/*# sourceMappingURL=Pizza.css.map */

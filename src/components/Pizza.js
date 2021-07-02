@@ -16,32 +16,25 @@ function Pizza(props) {
     function multiComponent(data, func) {
         return data.map((elem) => {
             return (
-                <div className='pizzaCard'>
-                    <label>
-                        <h3>{elem}</h3>
-                        <input type='checkbox' name={elem} onClick={(e) => {
-                            func([...toppings, elem])
-                        }}/>
-                    </label>
-                </div>
+                <label className='pizzaCard'>
+                    <h3>{elem}</h3>
+                    <input type='checkbox' onClick={(e) => {
+                        func([...toppings, elem])
+                    }}/>
+                </label>
             )
         })
     }
     function radioComponent(data, func) {
         return data.map((elem) => {
             return (
-                <div className='pizzaCard'>
-                    <label>
-                        <h3>{elem}</h3>
-                        <div>
-                            <input type='radio' name={String(func)} value={elem} onChange={(e) => {
-                                func(elem)
-                                console.log(cheese)
-                            }}/>
-                            <span>Select</span>
-                        </div>
-                    </label>
-                </div>
+                <label className='pizzaCard'>
+                    <h3>{elem}</h3>
+                    <input type='radio' name={String(func)} value={elem} onChange={(e) => {
+                        func(elem)
+                        console.log(cheese)
+                    }}/>
+                </label>
             )
         })
     }

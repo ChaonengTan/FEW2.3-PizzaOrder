@@ -26,9 +26,6 @@
         input {
             visibility: hidden;
             position: absolute;
-            // &:checked {
-            //     background-color: black;
-            // }
         }
         &::before, &::after {
             content: '';
@@ -41,12 +38,13 @@
         }
         &::after {transform: rotate(90deg);}
         &:hover {
-            transform: scale(1.1);
             &::before, &::after {
                 visibility: visible;
-                background-color: black;
+                background-color: var(--cardColor);
             }
-            --cardColor: white;
+            transform: scale(1.1);
+            border-color: var(--cardBG);
+            color: var(--cardBG);
         }
     }
 }

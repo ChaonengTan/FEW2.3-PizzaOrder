@@ -42,11 +42,12 @@
 }
 .addButtons > * .pizzaCard:hover {
   transform: scale(1.1);
-  --cardColor: white;
+  border-color: var(--cardBG);
+  color: var(--cardBG);
 }
 .addButtons > * .pizzaCard:hover::before, .addButtons > * .pizzaCard:hover::after {
   visibility: visible;
-  background-color: black;
+  background-color: var(--cardColor);
 }
 
 /*# sourceMappingURL=Pizza.css.map */

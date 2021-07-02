@@ -4,6 +4,7 @@
     .pizzaCard {
         --cardColor: black;
         --cardBG: white;
+
         margin: 1rem;
         border: solid var(--cardColor) 2px;
         color: var(--cardColor);
@@ -14,6 +15,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        transition: 200ms;
         label {
             display: flex;
             flex-direction: column;
@@ -22,8 +24,29 @@
             height: 100%;
         }
         input {
-            // visibility: hidden;
-            // position: absolute;
+            visibility: hidden;
+            position: absolute;
+            // &:checked {
+            //     background-color: black;
+            // }
+        }
+        &::before, &::after {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            width: 100px;
+            height: 20px;
+            background-color: opacity(0);
+            transition: 200ms;
+        }
+        &::after {transform: rotate(90deg);}
+        &:hover {
+            transform: scale(1.1);
+            &::before, &::after {
+                visibility: visible;
+                background-color: black;
+            }
+            --cardColor: white;
         }
     }
 }

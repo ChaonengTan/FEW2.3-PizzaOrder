@@ -15,6 +15,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: 200ms;
 }
 .addButtons > * .pizzaCard label {
   display: flex;
@@ -22,6 +23,30 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+.addButtons > * .pizzaCard input {
+  visibility: hidden;
+  position: absolute;
+}
+.addButtons > * .pizzaCard::before, .addButtons > * .pizzaCard::after {
+  content: "";
+  visibility: hidden;
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  background-color: opacity(0);
+  transition: 200ms;
+}
+.addButtons > * .pizzaCard::after {
+  transform: rotate(90deg);
+}
+.addButtons > * .pizzaCard:hover {
+  transform: scale(1.1);
+  --cardColor: white;
+}
+.addButtons > * .pizzaCard:hover::before, .addButtons > * .pizzaCard:hover::after {
+  visibility: visible;
+  background-color: black;
 }
 
 /*# sourceMappingURL=Pizza.css.map */

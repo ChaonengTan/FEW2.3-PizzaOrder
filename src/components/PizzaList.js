@@ -6,7 +6,7 @@ function PizzaList() {
     const pizzaList = pizzas.map((pizza, index) => {
         return (
         <div key={index}>
-            Name:{pizza.name} Composition: {pizza.composition}
+            Name:{pizza.name} Composition: {[pizza.composition].map(e => `${e} `)}
         </div>)
         })
     return (

@@ -19,7 +19,11 @@ function Pizza(props) {
                 <label className='pizzaCard'>
                     <h3>{elem}</h3>
                     <input type='checkbox' onClick={(e) => {
-                        func([...toppings, elem])
+                        if(toppings.includes(elem)){
+                            func(toppings.filter(e => e !== elem))
+                        } else {
+                            func([...toppings, elem])
+                        }
                     }}/>
                 </label>
             )
@@ -30,9 +34,8 @@ function Pizza(props) {
             return (
                 <label className='pizzaCard'>
                     <h3>{elem}</h3>
-                    <input type='radio' name={String(func)} value={elem} onChange={(e) => {
+                    <input type='radio' name={data} value={elem} onChange={(e) => {
                         func(elem)
-                        console.log(cheese)
                     }}/>
                 </label>
             )
@@ -54,7 +57,7 @@ function Pizza(props) {
             }}>
                 Save Pizza
             </button>
-            <div>{name} {crust} {cheese} {toppings}</div>
+            <div>{name} {crust} {cheese} {toppings.map(e => `${e} `)}</div>
         </div>
     )
 }

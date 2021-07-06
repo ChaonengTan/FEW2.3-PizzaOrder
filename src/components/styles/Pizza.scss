@@ -9,6 +9,7 @@
         border: solid var(--cardColor) 2px;
         color: var(--cardColor);
         background-color: var(--cardBG);
+        box-shadow: 1px 2px 2px black;
         height: 150px;
         width: 150px;
         display: flex;
@@ -45,6 +46,17 @@
             transform: scale(1.1);
             border-color: var(--cardBG);
             color: var(--cardBG);
+        }
+    }
+    .selected{
+        background-color: var(--cardColor);
+        color: var(--cardBG);
+        &::after {transform: rotate(0);}
+        &:hover {
+            &::before, &::after {
+                background-color: var(--cardBG);
+            }
+            color: var(--cardColor);
         }
     }
 }

@@ -15,15 +15,12 @@ function Pizza(props) {
 
     function multiComponent(data, func) {
         return data.map((elem) => {
+            const selected = toppings.includes(elem) ? 'selected' : ''
             return (
-                <label className='pizzaCard'>
+                <label className={`pizzaCard ${selected}`}>
                     <h3>{elem}</h3>
                     <input type='checkbox' onClick={(e) => {
-                        if(toppings.includes(elem)){
-                            func(toppings.filter(e => e !== elem))
-                        } else {
-                            func([...toppings, elem])
-                        }
+                        toppings.includes(elem) ? func(toppings.filter(e => e !== elem)) : func([...toppings, elem])
                     }}/>
                 </label>
             )
@@ -31,8 +28,9 @@ function Pizza(props) {
     }
     function radioComponent(data, func) {
         return data.map((elem) => {
+            const selected = crust === elem || cheese === elem ? 'selected' : ''
             return (
-                <label className='pizzaCard'>
+                <label className={`pizzaCard ${selected}`}>
                     <h3>{elem}</h3>
                     <input type='radio' name={data} value={elem} onChange={(e) => {
                         func(elem)

@@ -5,10 +5,11 @@ function PizzaList() {
     const pizzas = useSelector((state) => state.pizzas)
     const pizzaList = pizzas.map((pizza, index) => {
         return (
-        <div key={index}>
-            Name:{pizza.name} Composition: {[pizza.composition].map(e => `${e} `)}
-        </div>)
-        })
+            <div key={index}>
+                Name:{pizza.name} Composition: {[pizza.composition].map(e => `${e} `)}
+            </div>
+        )
+    })
     return (
         <div className='pizzaList'>
             {pizzaList}

@@ -40,22 +40,24 @@ function Pizza(props) {
         })
     }
     return (
-        <div className='ToppingHandler'>
+        <div className='pizza'>
+            <div>
+                <input
+                    type='text'
+                    onChange={(e) => setName(e.target.value)}
+                    value={name} placeholder='Name Your Pizza'
+                />
+                <button onClick={(e) => {
+                    dispatch(addPizza(name, [crust, cheese, toppings]))
+                }}>
+                    Save Pizza
+                </button>
+            </div>
             <div className='addButtons'>
                 <div>{radioComponent(data.crust, addCrust)}</div>
                 <div>{radioComponent(data.cheese, addCheese)}</div>
                 <div>{multiComponent(data.toppings, addTopping)}</div>
             </div>
-            <input
-                onChange={(e) => setName(e.target.value)}
-                value={name} placeholder='Name Your Pizza'
-            />
-            <button onClick={(e) => {
-                dispatch(addPizza(name, [crust, cheese, toppings]))
-            }}>
-                Save Pizza
-            </button>
-            <div>{name} {crust} {cheese} {toppings.map(e => `${e} `)}</div>
         </div>
     )
 }

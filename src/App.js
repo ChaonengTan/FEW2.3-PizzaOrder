@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './components/styles/App.css';
 import data from './data.json'
 
 import { createStore } from 'redux'
@@ -14,8 +14,8 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-      <Pizza data={data}/>
-      <PizzaList/>
+        <Pizza data={data}/>
+        <PizzaList/>
       </div>
     </Provider>
   );

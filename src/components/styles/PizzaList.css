@@ -4,8 +4,16 @@
   flex-direction: column;
   align-items: flex-start;
 }
-.pizzaList > * {
+.pizzaList .pizzaListCard {
   margin-bottom: 1rem;
+  border: solid black 2px;
+  padding: 1rem;
+}
+.pizzaList .pizzaListCard > .name {
+  border-bottom: solid black 2px;
+}
+.pizzaList .pizzaListCard > * {
+  padding: 0.5rem 1rem;
 }
 
 /*# sourceMappingURL=PizzaList.css.map */

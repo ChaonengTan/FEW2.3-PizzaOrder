@@ -1,62 +1,82 @@
-.addButtons>* {
-    display: flex;
-    flex-direction: row;
-    .pizzaCard {
-        --cardColor: black;
-        --cardBG: white;
-
-        margin: 1rem;
-        border: solid var(--cardColor) 2px;
-        color: var(--cardColor);
-        background-color: var(--cardBG);
-        box-shadow: 1px 2px 2px black;
-        height: 150px;
-        width: 150px;
+.addButtons {
+    &>* {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: 200ms;
-        label {
+        flex-direction: row;
+        max-width: 50vw;
+        overflow: scroll;
+        .pizzaCard {
+            --cardColor: black;
+            --cardBG: white;
+    
+            margin: 1rem;
+            border: solid var(--cardColor) 2px;
+            color: var(--cardColor);
+            background-color: var(--cardBG);
+            box-shadow: 1px 2px 2px black;
+            height: 150px;
+            width: 150px;
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: center;
-            width: 100%;
-            height: 100%;
-        }
-        input {
-            visibility: hidden;
-            position: absolute;
-        }
-        &::before, &::after {
-            content: '';
-            visibility: hidden;
-            position: absolute;
-            width: 100px;
-            height: 20px;
-            background-color: opacity(0);
             transition: 200ms;
-        }
-        &::after {transform: rotate(90deg);}
-        &:hover {
-            &::before, &::after {
-                visibility: visible;
-                background-color: var(--cardColor);
+            label {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
             }
-            transform: scale(1.1);
-            border-color: var(--cardBG);
+            input {
+                visibility: hidden;
+                position: absolute;
+            }
+            &::before, &::after {
+                content: '';
+                visibility: hidden;
+                position: absolute;
+                width: 100px;
+                height: 20px;
+                background-color: opacity(0);
+                transition: 200ms;
+            }
+            &::after {transform: rotate(90deg);}
+            &:hover {
+                &::before, &::after {
+                    visibility: visible;
+                    background-color: var(--cardColor);
+                }
+                transform: scale(1.1);
+                border-color: var(--cardBG);
+                color: var(--cardBG);
+            }
+        }
+        .selected{
+            background-color: var(--cardColor);
             color: var(--cardBG);
-        }
-    }
-    .selected{
-        background-color: var(--cardColor);
-        color: var(--cardBG);
-        &::after {transform: rotate(0);}
-        &:hover {
-            &::before, &::after {
-                background-color: var(--cardBG);
+            &::after {transform: rotate(0);}
+            &:hover {
+                &::before, &::after {
+                    background-color: var(--cardBG);
+                }
+                color: var(--cardColor);
             }
-            color: var(--cardColor);
         }
     }
+}
+button {
+    height: 50px;
+    width: 100px;
+    font-size: 1rem;
+}
+input[type=text] {
+    height: 47px;
+    width: 200px;
+    padding-left: 1rem;
+}
+.pizza {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
 }

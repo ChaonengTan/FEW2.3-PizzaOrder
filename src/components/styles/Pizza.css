@@ -67,9 +67,21 @@
 }
 
 button {
+  --buttonColor: white;
+  --buttonBG: cornflowerblue;
   height: 50px;
   width: 100px;
   font-size: 1rem;
+  background-color: var(--buttonBG);
+  color: var(--buttonColor);
+  border: solid 2px var(--buttonBG);
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  transition: 200ms;
+}
+button:hover {
+  background-color: var(--buttonColor);
+  color: var(--buttonBG);
 }
 
 input[type=text] {

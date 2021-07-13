@@ -1,0 +1,11 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 10vh;
+    background-color: rgb(212, 212, 212);
+    img {
+        height: 5vh;
+        margin-right: 1rem;
+    }
+}

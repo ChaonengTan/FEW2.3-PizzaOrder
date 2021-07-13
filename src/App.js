@@ -7,6 +7,8 @@ import { Provider } from 'react-redux'
 import reducers from './reducers'
 import Pizza from './components/Pizza';
 import PizzaList from './components/PizzaList';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const store = createStore(reducers);
 
@@ -14,8 +16,12 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <Pizza data={data}/>
-        <PizzaList/>
+        <Header />
+        <div className='content'>
+          <Pizza data={data}/>
+          <PizzaList/>
+        </div>
+        <Footer />
       </div>
     </Provider>
   );

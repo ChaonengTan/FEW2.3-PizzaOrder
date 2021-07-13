@@ -1,10 +1,27 @@
+.addButtons {
+  width: 50vw;
+}
+.addButtons .buttonTag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 75px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: cornflowerblue;
+  color: white;
+}
 .addButtons > * {
   display: flex;
+  align-items: center;
+}
+.addButtons > * > :nth-child(2) {
+  display: flex;
   flex-direction: row;
-  max-width: 50vw;
+  align-items: center;
   overflow: scroll;
 }
-.addButtons > * .pizzaCard {
+.addButtons > * > :nth-child(2) .pizzaCard {
   --cardColor: black;
   --cardBG: white;
   margin: 1rem;
@@ -13,25 +30,25 @@
   background-color: var(--cardBG);
   box-shadow: 1px 2px 2px black;
   height: 150px;
-  width: 150px;
+  min-width: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: 200ms;
 }
-.addButtons > * .pizzaCard label {
+.addButtons > * > :nth-child(2) .pizzaCard label {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
-.addButtons > * .pizzaCard input {
+.addButtons > * > :nth-child(2) .pizzaCard input {
   visibility: hidden;
   position: absolute;
 }
-.addButtons > * .pizzaCard::before, .addButtons > * .pizzaCard::after {
+.addButtons > * > :nth-child(2) .pizzaCard::before, .addButtons > * > :nth-child(2) .pizzaCard::after {
   content: "";
   visibility: hidden;
   position: absolute;
@@ -40,29 +57,29 @@
   background-color: opacity(0);
   transition: 200ms;
 }
-.addButtons > * .pizzaCard::after {
+.addButtons > * > :nth-child(2) .pizzaCard::after {
   transform: rotate(90deg);
 }
-.addButtons > * .pizzaCard:hover {
+.addButtons > * > :nth-child(2) .pizzaCard:hover {
   transform: scale(1.1);
   border-color: var(--cardBG);
   color: var(--cardBG);
 }
-.addButtons > * .pizzaCard:hover::before, .addButtons > * .pizzaCard:hover::after {
+.addButtons > * > :nth-child(2) .pizzaCard:hover::before, .addButtons > * > :nth-child(2) .pizzaCard:hover::after {
   visibility: visible;
   background-color: var(--cardColor);
 }
-.addButtons > * .selected {
+.addButtons > * > :nth-child(2) .selected {
   background-color: var(--cardColor);
   color: var(--cardBG);
 }
-.addButtons > * .selected::after {
+.addButtons > * > :nth-child(2) .selected::after {
   transform: rotate(0);
 }
-.addButtons > * .selected:hover {
+.addButtons > * > :nth-child(2) .selected:hover {
   color: var(--cardColor);
 }
-.addButtons > * .selected:hover::before, .addButtons > * .selected:hover::after {
+.addButtons > * > :nth-child(2) .selected:hover::before, .addButtons > * > :nth-child(2) .selected:hover::after {
   background-color: var(--cardBG);
 }
 

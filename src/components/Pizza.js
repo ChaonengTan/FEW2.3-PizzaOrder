@@ -54,9 +54,19 @@ function Pizza(props) {
                 </button>
             </div>
             <div className='addButtons'>
-                <div>{radioComponent(data.crust, addCrust)}</div>
-                <div>{radioComponent(data.cheese, addCheese)}</div>
-                <div>{multiComponent(data.toppings, addTopping)}</div>
+                <div>
+                    <div className='buttonTag'>Size: </div>
+                    <div>{radioComponent(data.crust, addCrust)}</div>
+                    
+                </div>
+                <div>
+                    <div className='buttonTag'>Cheese: </div>
+                    <div>{radioComponent(data.cheese, addCheese)}</div>
+                </div>
+                <div>
+                    <div className='buttonTag'>Toppings: </div>
+                    <div>{multiComponent(data.toppings, addTopping)}</div>
+                </div>
             </div>
         </div>
     )

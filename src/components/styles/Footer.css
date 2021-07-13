@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 10vh;
+  background-color: #d4d4d4;
+}
+.footer img {
+  height: 5vh;
+  margin-right: 1rem;
+}
+
+/*# sourceMappingURL=Footer.css.map */

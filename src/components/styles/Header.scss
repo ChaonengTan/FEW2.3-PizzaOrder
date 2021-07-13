@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    background-color: cornflowerblue;
+    color: white;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    span {
+        font-size: 2rem;
+        &:nth-child(1) {font-weight: bolder;}
+        &:nth-child(2) {font-weight: 200;}
+    }
+}

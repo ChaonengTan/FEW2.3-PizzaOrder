@@ -1,6 +1,9 @@
 .App {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+}
+.App .content {
+  display: flex;
 }
 
 /*# sourceMappingURL=App.css.map */

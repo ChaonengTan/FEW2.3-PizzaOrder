@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  background-color: cornflowerblue;
+  color: white;
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+}
+.header span {
+  font-size: 2rem;
+}
+.header span:nth-child(1) {
+  font-weight: bolder;
+}
+.header span:nth-child(2) {
+  font-weight: 200;
+}
+
+/*# sourceMappingURL=Header.css.map */

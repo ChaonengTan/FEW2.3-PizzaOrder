@@ -3,7 +3,7 @@ function Header() {
     return (
         <div className='header'>
             <span>Pizza</span>
-            <span>Builder</span>
+            <span>Order</span>
         </div>
     )
 }

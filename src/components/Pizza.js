@@ -57,7 +57,6 @@ function Pizza(props) {
                 <div>
                     <div className='buttonTag'>Size: </div>
                     <div>{radioComponent(data.crust, addCrust)}</div>
-                    
                 </div>
                 <div>
                     <div className='buttonTag'>Cheese: </div>
